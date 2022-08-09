@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 
 # Final Exam - Youngdahl-FinalProject.py
-# A calculator that will determine if a value is evenly divisible by either 3, 5, or 3 and 5 together.
+# A calculator that will determine if a value is evenly divisible by either 3, 5, or 3 and 5 together, utilizing modulus operators.
 # Dylan Youngdahl CSCI-1103-W03 (WORKS REFERENCED BELOW)
-# Date - 8 August, 2022
+# Date - 9 August, 2022
 
 """
 As a user I want an application that will allow me to know which numbers in a range of values are evenly divisible first by 3, then by 5, and then by both 3 and 5.
-
-To properly complete this assignment, you will need to apply the following skills:
 
     Read string input from the console and convert input to required numeric data-types
     Understand how to use the Python Modulo Operator
@@ -16,6 +14,7 @@ To properly complete this assignment, you will need to apply the following skill
     Understand how to implement a loop
     Output information back to the user
 """
+
 
 start_value, ending_value = None, None
 
@@ -33,29 +32,27 @@ while start_value or ending_value == None:
     else:
         break
     
-values = [start_value, ending_value]
     
-def calculator():
+def calculator(): # (1) 
     print('\n')
-    for i in range(start_value, ending_value + 1):
-        lol = i % 3
-        wut = i % 5
-        if lol == 0:
-            print(i, '- divisible by 3')
+    for num in range(start_value, ending_value + 1):
+        if num % 3 == 0 and num % 5 == 0:
+            print(num, '- divisible by both')
             continue
-        elif wut == 0:
-            print(i, '- divisible by 5')
+        elif num % 3 == 0:
+            print(num, '- divisible by 3')
             continue
-        elif lol and wut == 0:
-            print(i, '- divisible by both')
+        elif num % 5 == 0:
+            print(num, '- divisible by 5')
+            continue
         else:
-            print(i)
+            print(num)
         
         
 calculator()
     
     
-    
 """
+References:
 (1) https://www.w3schools.com/python/python_operators.asp
 """
